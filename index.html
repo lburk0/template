@@ -1,60 +1,147 @@
-<!doctype html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>როგორი ადამიანი ხარ სინამდვილეში</title>
-		<style type="text/css">
-		header{
-			background-color: #4dff4d;
-			height: 150px;
-			text-align: center;
-			padding-top: 50px;
-		}
-		p{
-			font-size: 20px;
-			color: green;
-		}
-		footer{
-			background-color: #4dff4d;
-			height: 100px;
-			text-align: center;
-		}
-		</style>
-	</head>
-	<body>
-		<header>
-		   <h1>ტესტი: როგორი ადამიანი ხარ სინამდვილეში</h1>
-		</header>
-		<section>
-			<article>
-				<img src="images/p-1.png" onclick="pasuxi(1);">
-				<img src="images/p-2.png" onclick="pasuxi(2);">
-				<img src="images/p-3.png" onclick="pasuxi(3);"><br>
-				<img src="images/p-4.png" onclick="pasuxi(4);">
-				<img src="images/p-5.png" onclick="pasuxi(5);">
-				<img src="images/p-6.png" onclick="pasuxi(6);">
-				<h3>ირჩიე პერსონაჟი და წაიკითხე განმარტება.</h3>
-				<p id="Note"></p>
-				<script type="text/javascript">
-					var List = [];//new Array();
-					List[0] = "თუ პირველი პორტრეტი მოგეწონა, ალბათ მიჩვეული ხარ მიზნების მიღწევას. შენი ამბიციები შესაშურია. შენ ნამდვილად იცი, როგორ მისცე ადამიანებს მოტივაცია - და ეს შესანიშნავია! ნებისმიერ უცნობ კომპანიაში ახერხებ თითქმის მაშინვე იპოვო საერთო ენა შენთვის ახალ ადამიანებთან. ზოგჯერ გეჩვენება, რომ ყოველთვის კარგ ხასიათზე ხარ. მაგრამ ხანდახან პენსიაზე წასვლა გჭირდება, რომ მარტო იყო. უფრო მეტიც, იცი, როგორ უნდა ისიამოვნო.";
-					List[1] = "მეორე პორტრეტს ის ადამიანები ირჩევენ, რომლებზეც შეიძლება ითქვას: წყნარ ჭაობში ეშმაკები ბუდობენ. შენ იცი რას აკეთებ, რაც არ უნდა იყოს. იცი, როგორ აწონ-დაწონო დადებითი და უარყოფითი მხარეები გადაწყვეტილების მიღებამდე.ყოველთვის შეუძლიათ სხვებს შენზე დაყრდნობა, ამით ზოგჯერ სარგებლობენ, მაგრამ შენ არ ხარ ერთ-ერთი მათგანი, ვინც საკუთარი თავის შეურაცხყოფას დაუშვებს. შენ შეგიძლია აღუდგე საკუთარ თავს მაშინაც კი, როცა გეჩვენება, რომ მთელმა სამყარომ ზურგი შეგაქცია. ეს იმსახურებს პატივისცემას!";
-					List[2] = "მესამე პორტრეტს, როგორც წესი, ზღვაში მუხლამდე მყოფი პირები ირჩევენ. ისინი არ ცნობენ აკრძალვებს და წესებს, ამიტომ ყოველთვის ისე იქცევიან, როგორც გული კარნახობთ. შენთან ერთად არასოდეს იცი რა მოხდება ერთ საათში. თავგადასავლების მოყვარული სული ცდილობს რაღაც უცნაური გააკეთოს! თქვენი ექსცენტრიული ბუნების გამო, ჩხუბი გაქვთ ოჯახთან და მეგობრებთან. მაგრამ ვის არ ემართება ეს? მთავარია იცოდეთ როგორ იპოვოთ ნებისმიერი ადამიანის გულის გასაღები.";
-					List[3] = "თუ მეოთხე პორტრეტი აირჩიე, მაშინ ალბათ შემოქმედებითი ადამიანი ხარ. ესთეტიკა შენთვის მნიშვნელოვანია, თუნდაც მინიმალიზმზე ვსაუბრობდეთ. გიყვარს სილამაზე, რომელიც ჩანს დეტალებში, იქნება ეს ჩვეულებრივი სამუშაო დღე თუ დღესასწაული. და შენს ირგვლივ ხალხიც იგივეა! თქვენს კომპანიაში ყოველთვის სითბო და სიმყუდროვეა. თქვენ ნამდვილად აფასებთ უბრალო ადამიანურ კომუნიკაციას ზედმეტი ტირილისა და პათოსის გარეშე. თქვენ ასევე ხართ ერთ-ერთი მათგანი, ვინც დიდხანს ვერ ახერხებს სხვების მიმართ წყენას. მიუხედავად იმისა, რომ ცხელ ხასიათზე ხართ, საკმარისად სწრაფად შორდებით და საჭიროების შემთხვევაში წინ მიდიხართ.";
-					List[4] = "მეხუთე პორტრეტს ირჩევენ ადამიანები, რომლებზეც შეიძლება ითქვას: კომპანიის სული. ოჯახს და მეგობრებს ვერ წარმოგიდგენიათ ცუდ ხასიათზე. შენთვის ჭიქა ყოველთვის ნახევრად სავსეა, არასოდეს ნახევრად ცარიელი. რაც არ უნდა მწუხარება მოხდეს, შეგიძლია იპოვო ძალა, რომ იცხოვრო. ყოველთვის ეხმარები გაჭირვებულებს: ადამიანებსაც და ცხოველებსაც. ნამდვილი მისაბაძი მაგალითი!";
-					List[5] = "მეექვსე პორტრეტს ირჩევენ მებრძოლი და ამავდროულად პატივმოყვარე პიროვნებები. შენი ხასიათის მთავარი თვისება სამართლიანობაა. შენ მოქმედებ შენი სინდისის მიხედვით და იცი, როგორ დანებდე საჭიროების შემთხვევაში.ხალხი თავს დაცულად გრძნობს შენს გარშემო. შენ ავლენ თავდაჯერებულობას. ეს გამოიხატება როგორც ყოველდღიურ ცხოვრებაში, ასევე სამსახურში. იქ, სხვათა შორის, თავს ლიდერად აჩვენებ. შეგიძლია სხვების ხელმძღვანელობა. ბრავო!";
-					
-					function pasuxi(I){
-						document.getElementById("Note").innerHTML = 
-						List[I-1];
-					}
-				
-				</script>
-			</article>
-		</section>
-		<footer>  
-			<h3>&copy;ყველა უფლედა დაცულია 2023</h3>
-		</footer>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>წნევის მონიტორინგი</title>
+    <style>
+        body {
+			background-image: url(backgrounds/2.jfif);
+			background-size: cover;
+			background-position: center;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-image: url(backgrounds/1.jpg);
+            height: 150px;
+			color: bisque;
+            text-align: center;
+            padding-top: 40px;
+        }
+
+        footer {
+            background-image: url(backgrounds/1.jpg);
+            height: 100px;
+			color: bisque;
+            text-align: center;
+            padding-top: 20px;
+        }
+
+        section {
+
+            padding: 20px;
+            margin: 0 auto;
+            max-width: 600px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        input[type="time"],
+        input[type="number"],
+        input[type="submit"],
+        input[type="reset"] {
+            margin-bottom: 10px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            width: 90px;
+            padding: 6px 12px;
+            margin-top: 10px;
+            margin-left: 5px;
+        }
+
+        input[type="submit"]:hover{
+            background-color: #45a049;
+        }
+
+        input[type="reset"] {
+            background-color: #FF6347;
+            color: white;
+            cursor: pointer;
+            width: 90px;
+            padding: 6px 12px;
+            margin-top: 10px;
+            margin-left: 5px;
+        }
+
+        input[type="reset"]:hover {
+            background-color: #FF4500;
+        }
+        
+        .button-group {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>წნევის მონიტორინგი</h1>
+    </header>
+    <section>
+        <article>
+            <form action="PrintTable.html" method="get">
+				<label for="ID"><b>პირადობის ნომერი(11 ციფრი): </b></label>
+                <input type="text" id="ID" name="ID" pattern="[0-9]{11}" maxlength="11"><br><br>
+
+                <label for="Firstname"><b>სახელი: </b></label>
+                <input type="text" id="Firstname" name="Firstname"><br><br>
+
+                <label for="Lastname"><b>გვარი: </b></label>
+                <input type="text" id="Lastname" name="Lastname"><br><br>
+
+                <label for="DATE"><b>თარიღი: </b></label>
+                <input type="date" id="DATE" name="DATE"><br><br>
+
+                <label for="wnevamin1"><b>მონიტორინგი 1: </b></label>
+                <input type="time" value="09:00" class="Time">
+                <b>წნევა min: </b><input type="number" class="wneva" name="wnevamin1">
+                <b>წნევა max: </b><input type="number" class="wneva" name="wnevamax1"><br><br>
+
+                <label for="wnevamin2"><b>მონიტორინგი 2: </b></label>
+                <input type="time" value="15:00" class="Time">
+                <b>წნევა min: </b><input type="number" class="wneva" name="wnevamin2">
+                <b>წნევა max: </b><input type="number" class="wneva" name="wnevamax2"><br><br>
+
+                <label for="wnevamin3"><b>მონიტორინგი 3: </b></label>
+                <input type="time" value="20:00" class="Time">
+                <b>წნევა min: </b><input type="number" class="wneva" name="wnevamin3">
+                <b>წნევა max: </b><input type="number" class="wneva" name="wnevamax3"><br><br>
 		
-	</body>
+				<div class="button-group">
+                    <input type="reset" value="Reset">
+                    <input type="submit" value="Submit">
+                </div>
+			</form>
+        </article>
+    </section>
+    <footer>
+        <h2>&copy;ყველა უფლება დაცულია 2023</h2>
+    </footer>
+
+    <script>
+        document.querySelector('form').addEventListener('submit', function(event) {
+            event.preventDefault();
+    
+            const formData = new FormData(this);
+            let urlParams = new URLSearchParams(formData).toString();
+    
+            window.location.href = `PrintTable.html?${urlParams}`;
+        });
+    </script>
+</body>
 </html>

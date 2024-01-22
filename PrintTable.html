@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Print Table</title>
+    <style>
+        body {
+			
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-image: url(backgrounds/1.jpg);
+            height: 150px;
+			color: bisque;
+            text-align: center;
+            padding-top: 40px;
+        }
+
+        footer {
+            background-image: url(backgrounds/1.jpg);
+            height: 100px;
+			color: bisque;
+            text-align: center;
+            padding-top: 20px;
+        }
+
+		section {
+			background-image: url(backgrounds/2.jfif);
+			background-size: cover;
+			background-position: center;
+            padding: 20px;
+            margin: 0 auto;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Print Table</h1>
+    </header>
+    <section>
+        <article id="displayData">
+           
+        </article>
+    </section>
+    <footer>
+        <h2>&copy;ყველა უფლება დაცულია 2023</h2>
+    </footer>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        
+        const ID = urlParams.get('ID');
+        const Firstname = urlParams.get('Firstname');
+        const Lastname = urlParams.get('Lastname');
+        const DATE = urlParams.get('DATE');
+        const wnevamin1 = urlParams.get('wnevamin1');
+        const wnevamax1 = urlParams.get('wnevamax1');
+        const wnevamin2 = urlParams.get('wnevamin2');
+        const wnevamax2 = urlParams.get('wnevamax2');
+        const wnevamin3 = urlParams.get('wnevamin3');
+        const wnevamax3 = urlParams.get('wnevamax3');
+    
+        const displayArea = document.getElementById('displayData');
+        displayArea.innerHTML = `
+            <p><b>პირადობის ნომერი: </b>${ID}</p>
+            <p><b>სახელი: </b>${Firstname}</p>
+            <p><b>გვარი: </b>${Lastname}</p>
+            <p><b>თარიღი: </b>${DATE}</p>
+            <p><b>მონიტორინგი 1: </b><b>წნევა min: </b>${wnevamin1}<b> - წნევა max: </b>${wnevamax1}</p>
+            <p><b>მონიტორინგი 2: </b><b>წნევა min: </b>${wnevamin2}<b> - წნევა max: </b>${wnevamax2}</p>
+            <p><b>მონიტორინგი 3: </b><b>წნევა min: </b>${wnevamin3}<b> - წნევა max: </b>${wnevamax3}</p>
+        `;
+    </script>
+</body>
+</html>
