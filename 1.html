@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>სახეთა გამოცნობა</title>
+		<style type="text/css">
+		header{
+			background-color: #4dff4d;
+			height: 80px;
+			text-align: center;
+		}
+		footer{
+			background-color: #4dff4d;
+			height: 30px;
+			text-align: center;
+		}
+		img{
+			width: 100px;
+			border: 3px solid white;
+		}
+		</style>
+	</head>
+	<body>
+		<header>
+		   <h1>სახეთა გამოცნობა</h1>
+		</header>
+		<section>
+			<article>
+				<img src="images/apple.png">
+				<img src="images/banana.png" >
+				<img src="images/grapes.png" >
+				<img src="images/mango.png" >
+				<img src="images/Watermelon.png" >
+				  <br><input type="text" id="proprt" 
+				  placeholder="შემოიტანეთ ობიექტის მახასიათებელი(დასახელება ან ფერი)" size="50">
+				  <button onclick="find();">Find Object</button>
+				  <script>
+					let ImagesObjects = [
+										  {Name: "Apple", color: "red"}
+										 ,{Name: "Banana", color: "yellow"}
+										 ,{Name: "Grapes", color: "ink color"}
+										 ,{Name: "Mango", color: "yellow"}
+										 ,{Name: "Watermelon", color: "green"}
+										]
+					
+					function find(){
+						//alert(document.getElementById("proprt").value);
+						let F_ImagesObjects = document.getElementById("proprt").value;
+						
+						for( i = 0; i < ImagesObjects.length; i++ ){
+							document.images[i].style.border = "0px solid white";
+						}
+						
+						for(i = 0; i < ImagesObjects.length; i++){
+							console.log(ImagesObjects[i].color);
+							if(  F_ImagesObjects == ImagesObjects[i].color 
+							  || F_ImagesObjects == ImagesObjects[i].Name){
+							  document.images[i].style.border = "3px solid red";
+							}
+						}
+					}
+				  
+				  </script>
+				  <br><br>
+				  <table border=0>
+				    <caption>ობიექტის მახასიათებლები</caption>
+					<tr><th>დასახელება</th><th>ფერი</th></tr>
+					<tr><td>Apple</td><td>red</td></tr>
+					<tr><td>Banana</td><td>yellow</td></tr>
+					<tr><td>Grapes</td><td>ink color</td></tr>
+					<tr><td>Mango</td><td>yellow</td></tr>
+					<tr><td>Watermelon</td><td>green</td></tr>
+				  </table>
+			</article>
+		</section>
+		<footer>  
+			<h3>&copy;ყველა უფლედა დაცულია 2024</h3>
+		</footer>
+	</body>
+</html>
